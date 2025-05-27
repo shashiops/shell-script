@@ -7,6 +7,8 @@ RED="\e[31m"  # Red color code
 GREEN="\e[32m" # Green color code
 NORMAL="\e[0m" # Normal code
 
+echo "This script has started at $TIMESTAMP" &>> $LOG_FILE
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then

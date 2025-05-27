@@ -16,6 +16,7 @@ dnf install nginx -y
 #check whether nginx is installed properly, use special variable $?=0 if installation is crt
 
 if [$? -ne 0]
+then
     echo "Error: Installation failed"
     exit 1
 else

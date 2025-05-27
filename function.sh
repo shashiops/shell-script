@@ -23,4 +23,4 @@ dnf install nginx -y
 VALIDATE $? "Installing nginx"
 
 dnf install git -y
-VALIDATE $? git "Installling git"
+VALIDATE $? "Installling git"

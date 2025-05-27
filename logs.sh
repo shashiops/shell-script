@@ -3,14 +3,17 @@
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOG_FILE="/tmp/$0-$TIMESTAMP.log"
+RED="\e[31m"  # Red color code
+GREEN="\e[32m" # Green color code
+NORMAL="\e[0m" # Normal code
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "Error:: $2 Failed"
+        echo "Error:: $2 $RED Failed $NORMAL"
         exit 1
     else
-        echo "$2 Success"
+        echo "$2 $GREEN Success $NORMAL"
     fi
 }
 

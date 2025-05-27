@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ID=$(id -u)
-TIMESTAMP=$(date +%F-%H-%M-%s)
+TIMESTAMP=$(date +%F-%H-%M-%S)
 LOG_FILE="/tmp/$0-$TIMESTAMP.log"
 
 VALIDATE(){
@@ -22,8 +22,8 @@ else
     echo "You are a root user"
 fi
 
-dnf install nginx -y &>> LOG_FILE  # '&' means either true or false, redirect the o/p to the logfile
+dnf install nginx -y &>> $LOG_FILE  # '&' means either true or false, redirect the o/p to the logfile
 VALIDATE $? "Installing nginx"
 
-dnf install git -y &>> LOG_FILE
+dnf install git -y &>> $LOG_FILE
 VALIDATE $? "Installling git"

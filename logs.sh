@@ -10,10 +10,10 @@ NORMAL="\e[0m" # Normal code
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "Error:: $2 $RED Failed $NORMAL"
+        echo -e "Error:: $2 $RED Failed $NORMAL"
         exit 1
     else
-        echo "$2 $GREEN Success $NORMAL"
+        echo -e "$2 $GREEN Success $NORMAL"
     fi
 }
 

@@ -4,6 +4,7 @@
 ID=$(id -u) #id -u gives the value=0, if the user is a root user
 
 if [$ID -ne 0]
+then
     echo "You are not a root user"
     exit 1    # exit 1 means script exits here
 else

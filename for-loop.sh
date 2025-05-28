@@ -9,7 +9,7 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOG_FILE="/tmp/$0-$TIMESTAMP.log"
 
 VALIDATE(){
-if [$1 -ne 0]
+if [ $1 -ne 0 ]
 then
     echo -e "Installation $package $RED Failed $NORMAL" 
 
@@ -18,7 +18,7 @@ else
 }
 
 
-if [$ID -ne 0]
+if [ $ID -ne 0 ]
 then
     echo -e "$RED Not a root user"
     exit 1
@@ -32,7 +32,7 @@ fi
 for package in $@ #first it will take git as first arg
 do 
     yum list installed $package &>> $LOG_FILE #here it checks if git is installed, check with $? value
-    if [$? -ne 0]
+    if [ $? -ne 0 ] 
     then    
         yum install $package -y &>> $LOG_FILE
         VALIDATE() $?
